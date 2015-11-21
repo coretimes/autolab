@@ -10,4 +10,7 @@ int main()
 	char buf[100];
 	read(in, buf, 80);
 	write(out, buf,80);
+    int a = 0;
+    int b = 1;
+    int c = a + b;
 }
