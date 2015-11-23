@@ -1,0 +1,1 @@
+cmd_/home/cuizhilei/device_test/sample_module.ko := ld -r -m elf_i386 -T /usr/src/linux-headers-3.2.0-24-generic-pae/scripts/module-common.lds --build-id  -o /home/cuizhilei/device_test/sample_module.ko /home/cuizhilei/device_test/sample_module.o /home/cuizhilei/device_test/sample_module.mod.o
