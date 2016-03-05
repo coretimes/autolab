@@ -1,0 +1,676 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\AutoDetector.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""afxres.rc""     // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDC_MainFrame           ICON                    "res\\AutoDetector.ico"
+IDI_Plus                ICON                    "res\\Plus.ico"
+IDI_PlusDisable         ICON                    "res\\PlusDisable.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_AutoDetector_Dlg DIALOGEX 0, 0, 584, 350
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "化学发光仪"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "S",IDC_Btn_Setting,530,0,16,14,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    PUSHBUTTON      "H",IDC_Btn_Help,550,0,16,14,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_MainTab,"SysTabControl32",TCS_OWNERDRAWFIXED,14,18,556,291
+END
+
+IDD_Summary_Dlg DIALOGEX 0, 0, 554, 342
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CTEXT           "（样本区控件）",IDC_Ctrl_SampleArea,6,18,192,314,SS_NOTIFY | SS_CENTERIMAGE
+    CTEXT           "(孵育区控件)",IDC_Ctrl_IncuArea,204,18,108,314,SS_NOTIFY,WS_EX_TRANSPARENT
+    CTEXT           "(Reagent Meter)",IDC_Ctrl_ReagentArea,318,18,234,314,SS_NOTIFY | SS_CENTERIMAGE
+END
+
+IDD_SampleConfig_Dlg DIALOGEX 0, 0, 454, 301
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "样本测试"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "样本信息",IDC_Static_Sample,4,5,230,95
+    LTEXT           "编号前缀",IDC_Title_NumPrefix,13,16,38,10
+    EDITTEXT        IDC_Value_NumPrefix,51,16,62,12,ES_AUTOHSCROLL
+    LTEXT           "序　号",IDC_Title_Serials,132,17,30,12
+    COMBOBOX        IDC_Combox_Serials,162,16,61,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "样本类型",IDC_Title_Type,13,36,38,10
+    COMBOBOX        IDC_Combox_Type,51,36,61,12,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "稀释度",IDC_Title_Dilution,132,36,25,10
+    EDITTEXT        IDC_Value_Dilution,162,36,26,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_Dilution,"msctls_updown32",UDS_ARROWKEYS,188,36,11,12
+    LTEXT           "倍",IDC_Title_Unit2,199,38,11,11
+    LTEXT           "送检单位",IDC_Title_Dept,13,56,38,10
+    EDITTEXT        IDC_Value_Dept,51,56,62,12,ES_AUTOHSCROLL
+    LTEXT           "送检人",IDC_Title_Applicant,132,56,27,10
+    EDITTEXT        IDC_Value_Applicant,161,56,61,12,ES_AUTOHSCROLL
+    LTEXT           "送检日期",IDC_Title_ApplyDate,13,78,38,10
+    CONTROL         "",IDC_Date_ApplyDate,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,51,75,62,14
+    CONTROL         "把以上输入设置为默认值",IDC_Checkbox_SetDefault,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,78,98,11
+    GROUPBOX        "测试配置",IDC_Static_Test,238,5,213,95
+    LTEXT           "选择项目",IDC_Title_Project,247,18,38,10
+    LISTBOX         IDC_Listbox_Project,248,30,82,58,LBS_SORT | LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "重复次数",IDC_Title_Repeation,349,19,32,12
+    EDITTEXT        IDC_Edit_Repeation,386,19,22,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Spin_Repeation,"msctls_updown32",UDS_ARROWKEYS,408,19,11,12
+    CONTROL         "设置理论浓度",IDC_Checkbox_SetTheoryConc,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,347,35,61,13
+    LTEXT           "起始浓度",IDC_Title_StartConc,348,56,38,10
+    EDITTEXT        IDC_Edit_StartConc,386,56,22,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Spin_StartConc,"msctls_updown32",UDS_ARROWKEYS,408,56,11,12
+    LTEXT           "ppb",IDC_Value_Unit,421,56,22,11
+    LTEXT           "增  量",IDC_Title_Increament,350,75,29,12
+    EDITTEXT        IDC_Edit_Increament,386,75,22,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Spin_Increament,"msctls_updown32",UDS_ARROWKEYS,408,75,11,12
+    LTEXT           "ppb",IDC_Value_Unit2,421,76,23,11
+    GROUPBOX        "一览表",IDC_Static_ListView,4,102,447,176
+    CONTROL         "",IDC_ConfigList,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,115,440,159
+    PUSHBUTTON      "确认",IDC_OK,352,280,43,17
+    PUSHBUTTON      "取消",IDC_Cancle,399,280,43,17
+END
+
+IDD_StandardConfig_Dlg DIALOGEX 0, 0, 305, 334
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "标准品"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "标准品信息",IDC_GrpTitle_StandardInfo,7,3,291,164
+    LTEXT           "检测项目",IDC_Title_TestProject,26,19,34,10
+    COMBOBOX        IDC_ComBox_TestProject,65,18,92,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "批号",IDC_Title_BatchNum,177,20,19,10
+    COMBOBOX        IDC_ComBox_BatchNum,198,17,88,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "生产日期：",IDC_Title_ProductDate,26,37,43,10
+    LTEXT           "20110101",IDC_Value_ProductDate,93,37,38,10
+    LTEXT           "失效日期：",IDC_Title_ExpirationDate,177,37,45,10
+    CTEXT           "20110101",IDC_Value_ExpirationDate,237,37,38,10
+    LTEXT           "额定实验次数：",IDC_Title_RatedTestTimes,26,52,60,10
+    LTEXT           " 100",IDC_Value_RatedTestTimes,93,52,38,10
+    LTEXT           "剩余实验次数：",IDC_Title_RemainTimes,177,52,59,10
+    LTEXT           " 100",IDC_Value_RemainTimes,237,52,38,10
+    LTEXT           "标准点个数：",IDC_Title_CountOfStdPoints,26,67,51,10
+    LTEXT           " 6",IDC_Value_CountOfStdPoints,93,67,38,10
+    LTEXT           "浓度单位：",IDC_Title_Unit,177,67,50,10
+    LTEXT           "ppb",IDC_Value_Unit,237,67,14,10
+    LTEXT           "标准点",IDC_Title_StdPoint,26,84,26,10
+    LTEXT           " 标准浓度",IDC_Title_StdConc,67,84,38,10
+    LTEXT           "标准点",IDC_STATIC,177,84,26,10
+    LTEXT           "标准浓度",IDC_STATIC,217,84,38,10
+    LTEXT           "A 点",IDC_Title_PointA,27,97,26,10
+    LTEXT           "0.01",IDC_Value_PointA,71,97,26,10
+    LTEXT           "F 点",IDC_Title_PointF,178,97,26,10
+    LTEXT           "0.01",IDC_Value_PointF,220,98,26,10
+    LTEXT           "B 点",IDC_Title_PointB,27,109,26,10
+    LTEXT           "0.01",IDC_Value_PointB,71,109,26,10
+    LTEXT           "G 点",IDC_Title_PointG,178,110,26,10
+    LTEXT           "0.01",IDC_Value_PointG,220,110,26,10
+    LTEXT           "C 点",IDC_Title_PointC,27,121,26,10
+    LTEXT           "0.01",IDC_Value_PointC,71,121,26,10
+    LTEXT           "H 点",IDC_Title_PointH,178,122,26,10
+    LTEXT           "0.01",IDC_Value_PointH,220,122,26,10
+    LTEXT           "D 点",IDC_Title_PointD,27,133,26,10
+    LTEXT           "0.01",IDC_Value_PointD,71,133,26,10
+    LTEXT           "I 点",IDC_Title_PointI,178,134,26,10
+    LTEXT           "0.01",IDC_Value_PointI,220,134,26,10
+    LTEXT           "E 点",IDC_Title_PointE,27,147,26,10
+    LTEXT           "0.01",IDC_Value_PointE,71,146,26,10
+    LTEXT           "J 点",IDC_Title_PointJ,178,148,26,10
+    LTEXT           "0.01",IDC_Value_PointJ,220,147,26,10
+    GROUPBOX        "测试配置",IDC_GrpTitle_TestConfigInfo,7,171,291,139
+    LTEXT           "重复次数",IDC_Title_Repeation,18,185,34,10
+    EDITTEXT        IDC_Edit_Repeation,51,185,18,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_Spin_Repeation,"msctls_updown32",UDS_ARROWKEYS,71,185,11,12
+    CONTROL         "",IDC_List_TestConfig,"SysListView32",LVS_REPORT | LVS_AUTOARRANGE | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,201,276,104
+    DEFPUSHBUTTON   "确认",IDC_OK,203,312,43,17
+    PUSHBUTTON      "取消",IDC_CANCEL,249,312,43,17
+END
+
+IDD_Test_Dlg DIALOGEX 0, 0, 386, 263
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体, MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TestMan_Tab,"SysTabControl32",TCS_OWNERDRAWFIXED,7,6,372,250
+END
+
+IDD_Reagent_Dlg DIALOGEX 0, 0, 504, 280
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "查询条件",IDC_GrpTitle_SelectConditions,4,7,334,254
+    LTEXT           "检测项目：",IDC_Title_ProjectName,12,21,35,13
+    COMBOBOX        IDC_COMBO_PojectName,48,21,76,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "生产日期：",IDC_Title_ProductDate,135,21,35,13
+    LTEXT           "从",IDC_Title_ProductDateFrom,174,21,14,10
+    CONTROL         "",IDC_Date_ProductFrom,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,185,21,62,13
+    LTEXT           "到",IDC_Title_ProductDateTo,254,21,10,10
+    CONTROL         "",IDC_Date_ProductTo,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,266,21,62,13
+    CONTROL         "",IDC_LIST_Reagents,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,12,37,317,201
+    PUSHBUTTON      "添加...",IDC_AddRecord_Button,223,243,33,14
+    PUSHBUTTON      "修改...",IDC_Modify_Button,260,243,33,14
+    PUSHBUTTON      "删除",IDC_DeleteRecord_Button,297,243,33,14
+    LTEXT           " 2154578",IDC_Data_ID,426,23,62,13
+    GROUPBOX        "详细信息",IDC_GrpTitle_Details,344,7,150,254,0,WS_EX_TRANSPARENT
+    LTEXT           "ID：",IDC_Title_ID,360,23,59,13
+    LTEXT           "生产批号：",IDC_Title_BatchNum,360,33,59,13
+    LTEXT           " HS20130101",IDC_Data_BatchNum2,426,33,62,13
+    LTEXT           "检测项目名称：",IDC_Title_ProjectName2,360,43,59,13
+    LTEXT           "克伦特罗",IDC_Data_ProjectName2,426,43,62,13
+    LTEXT           "生产日期：",IDC_Title_ProductDate2,360,53,59,13
+    LTEXT           "20130101",IDC_Data_ProductDate2,426,53,62,13
+    LTEXT           "失效日期：",IDC_Title_ExpirationDate,360,63,59,13
+    LTEXT           "20150301",IDC_Data_ExpirationDate,426,63,62,13
+    LTEXT           "额定实验次数：",IDC_Title_RatedTestTimes,360,73,59,13
+    LTEXT           "20",IDC_Data_RatedTestTimes,426,73,62,13
+    LTEXT           "剩余实验次数：",IDC_Title_RemainTimes,360,83,59,13
+    LTEXT           "10",IDC_Data_RemainTimes,426,83,34,9
+    LTEXT           "首次装载时间：",IDC_Title_FirstLoadTime,360,93,59,13
+    LTEXT           "20130210",IDC_Data_FirstLoadTime,426,93,38,10
+    LTEXT           "首次使用时间：",IDC_Title_FirstUseTime,360,93,59,13
+    LTEXT           "20130501",IDC_Data_FirstUseTime,426,93,62,13
+    LTEXT           "测量单位：",IDC_Title_Unit,360,103,59,13
+    LTEXT           "ppb",IDC_Data_Unit,426,103,62,8
+    LTEXT           "结果上限：",IDC_Title_UpperLimit,360,113,59,13
+    LTEXT           "50",IDC_Data_UpperLimit,426,113,62,13
+    LTEXT           "结果下限：",IDC_Title_LowerLimit,360,123,59,13
+    LTEXT           "10",IDC_Data_LowerLimit,426,123,62,13
+    LTEXT           "样本用量：",IDC_Title_SampleAmount,360,133,59,13
+    LTEXT           "ppb",IDC_Data_SampleAmount,426,133,62,13
+    LTEXT           "磁标用量：",IDC_Title_MagneticAmount,360,143,59,13
+    LTEXT           "ppb",IDC_Data_MagneticAmount,426,143,62,13
+    LTEXT           "酶标用量：",IDC_Title_HRPAmount,360,153,59,13
+    LTEXT           "10",IDC_Data_HRPAmount,426,153,62,13
+    LTEXT           "稀释倍数：",IDC_Title_Dilution2,360,163,59,13
+    LTEXT           "12",IDC_Data_Dilution,426,162,62,13
+    LTEXT           "清洗次数：",IDC_Title_WashTimes,360,173,59,13
+    LTEXT           "12",IDC_Data_WashTimes,426,173,62,13
+    LTEXT           "温育时间：",IDC_Title_IncubationTime,360,183,59,13
+    LTEXT           "12",IDC_Data_IncubationTime,426,183,62,13
+END
+
+IDD_Sample_Dlg DIALOGEX 0, 0, 504, 280
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "检测项目：",IDC_Title_ProjectName,14,32,36,14
+    COMBOBOX        IDC_COMBO_PojectName,51,31,56,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "检验日期：",IDC_Title_TestDate,119,32,39,14
+    CONTROL         "",IDC_Date_TestDateFrom,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,157,31,53,14
+    LTEXT           "～",IDC_Title_ProductDateTo,215,33,12,11
+    CONTROL         "",IDC_Date_TestDateTo,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,227,31,53,14
+    EDITTEXT        IDC_Edit_SampleNo,51,9,56,13,ES_AUTOHSCROLL
+    LTEXT           "样本编号：",IDC_Title_SampleNo,14,10,35,14
+    EDITTEXT        IDC_Edit_Dept,325,10,56,13,ES_AUTOHSCROLL
+    LTEXT           "送检单位：",IDC_Title_Dept,287,10,35,14
+    LTEXT           "样本类型：",IDC_Title_SampleType,119,10,36,14
+    COMBOBOX        IDC_Combo_SampleType,157,9,53,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_Edit_Applicant,421,9,56,13,ES_AUTOHSCROLL
+    LTEXT           "送检人：",IDC_Title_Applicant,386,10,34,14
+    EDITTEXT        IDC_Edit_Operator,325,31,56,13,ES_AUTOHSCROLL
+    LTEXT           "检验员：",IDC_Title_Operator,287,32,33,14
+    CONTROL         "",IDC_List_Sample,"SysListView32",LVS_LIST | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,13,55,476,200
+    PUSHBUTTON      "打印...",IDC_Print_Button,383,260,33,14
+    PUSHBUTTON      "修改...",IDC_Modify_Button,420,260,33,14
+    PUSHBUTTON      "删除",IDC_DeleteRecord_Button,457,260,33,14
+END
+
+IDD_Standerd_Dlg DIALOGEX 0, 0, 504, 280
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "查询条件",IDC_GrpTitle_SelectConditions,4,7,334,254
+    LTEXT           "检测项目：",IDC_Title_ProjectName,12,21,35,13
+    COMBOBOX        IDC_COMBO_PojectName,48,21,76,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "生产日期：",IDC_Title_ProductDate,135,21,35,13
+    LTEXT           "从",IDC_Title_ProductDateFrom,174,21,14,10
+    CONTROL         "",IDC_Date_ProductFrom,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,185,21,62,13
+    LTEXT           "到",IDC_Title_ProductDateTo,254,21,10,10
+    CONTROL         "",IDC_Date_ProductTo,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,266,21,62,13
+    PUSHBUTTON      "添加...",IDC_AddRecord_Button,223,243,33,14
+    PUSHBUTTON      "修改...",IDC_Modify_Button,260,243,33,14
+    PUSHBUTTON      "删除",IDC_DeleteRecord_Button,297,243,33,14
+    CONTROL         "",IDC_LIST_Standerd,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,12,37,317,201
+    GROUPBOX        "详细信息",IDC_GrpTitle_Details,344,7,150,254,0,WS_EX_TRANSPARENT
+    LTEXT           "ID：",IDC_Title_ID,360,23,59,8
+    LTEXT           " 2154578",IDC_Data_ID,426,23,56,8
+    LTEXT           "生产批号：",IDC_Title_BatchNum,360,33,59,8
+    LTEXT           " HS20130101",IDC_Data_BatchNum2,426,33,62,13
+    LTEXT           "检测项目名称：",IDC_Title_ProjectName2,360,43,59,8
+    LTEXT           "克伦特罗",IDC_Data_ProjectName2,426,43,62,13
+    LTEXT           "生产日期：",IDC_Title_ProductDate2,360,53,59,13
+    LTEXT           "20130101",IDC_Data_ProductDate2,426,53,62,8
+    LTEXT           "失效日期：",IDC_Title_ExpirationDate,360,63,59,8
+    LTEXT           "20150301",IDC_Data_ExpirationDate,426,63,62,13
+    LTEXT           "额定实验次数：",IDC_Title_RatedTestTimes,360,73,59,8
+    LTEXT           "20",IDC_Data_RatedTestTimes,426,73,62,8
+    LTEXT           "剩余实验次数：",IDC_Title_RemainTimes,360,83,59,8
+    LTEXT           "10",IDC_Data_RemainTimes,426,83,62,8
+    LTEXT           "首次装载时间：",IDC_Title_FirstLoadTime,360,93,59,8
+    LTEXT           "20130210",IDC_Data_FirstLoadTime,426,93,62,8
+    LTEXT           "首次使用时间：",IDC_Title_FirstUseTime,360,103,59,8
+    LTEXT           "20130501",IDC_Data_FirstUseTime,426,103,62,13
+    LTEXT           "测量单位：",IDC_Title_Unit,360,113,59,8
+    LTEXT           "ppb",IDC_Data_Unit,426,113,62,8
+    LTEXT           "标准点个数：",IDC_Title_StdPointCount,360,123,59,8
+    LTEXT           "50",IDC_Data_StdPointCount,426,123,62,8
+    LTEXT           "A点浓度：",IDC_Title_Std1,360,133,59,8
+    LTEXT           "10",IDC_Data_Std1,426,133,62,8
+    LTEXT           "B点浓度：",IDC_Title_Std2,360,143,59,8
+    LTEXT           "ppb",IDC_Data_Std2,426,143,62,8
+    LTEXT           "C点浓度：",IDC_Title_Std3,360,153,59,8
+    LTEXT           "ppb",IDC_Data_Std3,426,153,62,8
+    LTEXT           "D点浓度：",IDC_Title_Std4,360,163,59,8
+    LTEXT           "10",IDC_Data_Std4,426,163,62,8
+    LTEXT           "E点浓度：",IDC_Title_Std5,360,173,59,13
+    LTEXT           "12",IDC_Data_Std5,426,173,62,8
+    LTEXT           "F点浓度：",IDC_Title_Std6,360,183,59,8
+    LTEXT           "12",IDC_Data_Std6,426,183,62,8
+    LTEXT           "G点浓度：",IDC_Title_Std7,360,193,59,8
+    LTEXT           "12",IDC_Data_Std7,426,193,62,8
+    LTEXT           "H点浓度：",IDC_Title_Std8,360,203,59,8
+    LTEXT           "12",IDC_Data_Std8,426,203,62,8
+    LTEXT           "I点浓度：",IDC_Title_Std9,360,213,59,8
+    LTEXT           "12",IDC_Data_Std9,426,214,62,8
+    LTEXT           "J点浓度：",IDC_Title_Std10,360,223,59,8
+    LTEXT           "12",IDC_Data_Std10,426,223,62,8
+END
+
+IDD_Analysis_Dlg DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体, MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,129,7,50,16
+    PUSHBUTTON      "取消",IDCANCEL,129,26,50,16
+END
+
+IDD_Maintain_Dlg DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 9, "宋体, MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,129,7,50,16
+    PUSHBUTTON      "取消",IDCANCEL,129,26,50,16
+END
+
+IDD_SampleAreaMan_Dlg DIALOGEX 0, 0, 405, 264
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "样本区控件",IDC_Ctrl_SampleArea,18,7,175,227,SS_NOTIFY
+    CONTROL         "",IDC_LIST_SampleArea,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,208,7,190,227
+END
+
+IDD_ReagentAreaMan_Dlg DIALOGEX 0, 0, 520, 304
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CTEXT           "(Reagent Meter)",IDC_Ctrl_ReagentArea,7,7,235,251,SS_NOTIFY | SS_CENTERIMAGE | SS_ENDELLIPSIS
+    CONTROL         "",IDC_LIST_ReagentArea,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | LVS_NOSORTHEADER | WS_TABSTOP,254,7,259,251,WS_EX_CLIENTEDGE
+END
+
+IDD_NewTestConfirm_Dlg DIALOGEX 0, 0, 478, 285
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "开始",IDC_Start,422,260,50,14
+    CONTROL         "",IDC_List_TestConfirm,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,414,271
+END
+
+IDD_TestMonitor_Dlg DIALOGEX 0, 0, 443, 286
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_List_Mornitor,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,429,272
+END
+
+IDD_ReagentSelect_Dlg DIALOGEX 0, 0, 393, 275
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "试剂选择"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_Reagents,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,17,77,195,173
+    GROUPBOX        "查询条件",IDC_GrpTitle_SelectConditions,7,7,215,249
+    LTEXT           "检测项目",IDC_Title_ProjectName,17,18,35,13
+    COMBOBOX        IDC_COMBO_PojectName,57,18,157,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "生产日期",IDC_Title_ProductDate,17,40,35,13
+    LTEXT           "从",IDC_Title_ProductDateFrom,57,40,14,10
+    CONTROL         "",IDC_Date_ProductFrom,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,67,40,62,13
+    CONTROL         "",IDC_Date_ProductTo,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,152,40,62,13
+    LTEXT           "试剂列表",IDC_Title_List,17,66,39,8
+    CONTROL         "隐藏过期试剂",IDC_CHECK_HideExpired,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,152,66,58,9
+    GROUPBOX        "标准品详细信息",IDC_GrpTitle_Details,227,7,158,249
+    LTEXT           "ID：",IDC_Title_ID,242,18,59,13
+    LTEXT           " 2154578",IDC_Data_ID,308,18,72,13
+    LTEXT           "生产批号：",IDC_Title_BatchNum2,242,31,59,13
+    LTEXT           " HS20130101",IDC_Data_BatchNum2,308,31,72,13
+    LTEXT           "检测项目名称：",IDC_Title_ProjectName2,242,44,59,13
+    LTEXT           "克伦特罗",IDC_Data_ProjectName2,308,44,72,13
+    LTEXT           "生产日期：",IDC_Title_ProductDate2,242,57,59,13
+    LTEXT           "20130101",IDC_Data_ProductDate2,308,57,72,13
+    LTEXT           "失效日期：",IDC_Title_ExpirationDate,242,70,59,13
+    LTEXT           "20150301",IDC_Data_ExpirationDate,308,70,72,13
+    LTEXT           "额定实验次数：",IDC_Title_RatedTestTimes,242,83,59,13
+    LTEXT           "20",IDC_Data_RatedTestTimes,308,83,72,13
+    LTEXT           "剩余实验次数：",IDC_Title_RemainTimes,242,96,59,13
+    LTEXT           "10",IDC_Data_RemainTimes,308,96,72,13
+    LTEXT           "首次装载时间：",IDC_Title_FirstLoadTime,242,109,59,13
+    LTEXT           "20130210",IDC_Data_FirstLoadTime,308,109,72,13
+    LTEXT           "首次使用时间：",IDC_Title_FirstUseTime,242,122,59,13
+    LTEXT           "20130501",IDC_Data_FirstUseTime,308,122,72,13
+    LTEXT           "测量单位：",IDC_Title_Unit,242,135,59,13
+    LTEXT           "ppb",IDC_Data_Unit,308,135,72,13
+    LTEXT           "结果上限：",IDC_Title_UpperLimit,242,148,59,13
+    LTEXT           "50",IDC_Data_UpperLimit,308,148,72,13
+    LTEXT           "结果下限：",IDC_Title_LowerLimit,242,161,59,13
+    LTEXT           "10",IDC_Data_LowerLimit,308,161,72,13
+    LTEXT           "样本用量：",IDC_Title_SampleAmount,242,174,59,13
+    LTEXT           "ppb",IDC_Data_SampleAmount,308,174,72,13
+    LTEXT           "磁标用量：",IDC_Title_MagneticAmount,242,187,59,13
+    LTEXT           "ppb",IDC_Data_MagneticAmount,308,187,72,13
+    LTEXT           "酶标用量：",IDC_Title_HRPAmount,242,200,59,13
+    LTEXT           "10",IDC_Data_HRPAmount,308,200,72,13
+    LTEXT           "稀释倍数：",IDC_Title_Dilution2,242,214,59,13
+    LTEXT           "12",IDC_Data_Dilution,308,213,72,13
+    LTEXT           "清洗次数：",IDC_Title_WashTimes,242,226,59,13
+    LTEXT           "12",IDC_Data_WashTimes,308,226,72,13
+    DEFPUSHBUTTON   "确定",IDOK,279,258,50,14
+    PUSHBUTTON      "取消",IDCANCEL,334,258,50,14
+    LTEXT           "温育时间：",IDC_Title_IncubationTime,242,238,59,13
+    LTEXT           "12",IDC_Data_IncubationTime,308,238,72,13
+    LTEXT           "到",IDC_Title_ProductDateTo,141,41,10,10
+END
+
+IDD_Curve_Dlg DIALOGEX 0, 0, 533, 296
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "查询条件",IDC_GrpTitle_SelectConditions,7,5,264,284
+    LTEXT           "检测项目：",IDC_Title_ProjectName,14,21,41,14
+    COMBOBOX        IDC_COMBO_PojectName,56,21,84,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "批号：",IDC_Title_BatchNum,148,21,26,11
+    COMBOBOX        IDC_Combo_BatchNum,176,21,86,14,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "定标日期：",IDC_Title_TestDate,14,37,41,14
+    CONTROL         "",IDC_Date_TestDateFrom,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,56,37,84,14
+    LTEXT           "～",IDC_Title_TildeSymbol,153,37,8,11
+    CONTROL         "",IDC_Date_TestDateTo,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,176,37,86,14
+    CONTROL         "",IDC_LIST_Curve,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,15,54,247,211
+    CONTROL         "",IDC_LIST_CurveData,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,289,31,228,104
+    GROUPBOX        "曲线信息",IDC_GrpTitle_CurveDetails,274,5,250,284
+    LTEXT           "示意图区",IDC_Title_CurveDiagram,289,142,35,10
+    LTEXT           "",IDC_Static_CurveDrawing,289,153,182,101
+    LTEXT           "曲线数据",IDC_Title_CurveData,289,20,45,10
+    CONTROL         "三次样条",IDC_Check_Spline,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,405,270,41,10
+    CONTROL         "四参数",IDC_Check_FourParams,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,461,270,41,10
+    CONTROL         "对数尺度",IDC_Raido_LogScale,"Button",BS_AUTORADIOBUTTON,295,270,45,10
+    CONTROL         "实际尺度",IDC_Raido_ActualScale,"Button",BS_AUTORADIOBUTTON,348,270,46,10
+    PUSHBUTTON      "打印...",IDC_Print_Button,137,270,39,15
+    PUSHBUTTON      "修改...",IDC_Modify_Button,180,270,39,15
+    PUSHBUTTON      "删除",IDC_DeleteRecord_Button,223,270,39,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "AutoDetector.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "AutoDetector.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_AutoDetector_Dlg, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 315
+    END
+
+    IDD_Test_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 379
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_Reagent_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 501
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 273
+    END
+
+    IDD_Sample_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 500
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 274
+    END
+
+    IDD_Standerd_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 497
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 273
+    END
+
+    IDD_Analysis_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_Maintain_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_SampleAreaMan_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 398
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 257
+    END
+
+    IDD_ReagentAreaMan_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 513
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 297
+    END
+
+    IDD_NewTestConfirm_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 475
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 278
+    END
+
+    IDD_TestMonitor_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 436
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 279
+    END
+
+    IDD_ReagentSelect_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 384
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_Curve_Dlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 524
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 289
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDR_Banner_Left         PNG                     "res\\BannerLeft.png"
+IDR_Banner_Middle       PNG                     "res\\BannerMiddle.png"
+IDR_Banner_Right        PNG                     "res\\BannerRight.png"
+IDR_SettingPress        PNG                     "res\\SettingPress.png"
+IDR_SettingHot          PNG                     "res\\SettingHot.png"
+IDR_SetingNormal        PNG                     "res\\SettingNormal.png"
+IDR_MaxNormal           PNG                     "res\\MaxNormal.png"
+IDR_MaxPress            PNG                     "res\\MaxPress.png"
+IDR_MaxHot              PNG                     "res\\MaxHot.png"
+IDR_MinNormal           PNG                     "res\\MinNormal.png"
+IDR_MinPress            PNG                     "res\\MinPress.png"
+IDR_ResNormal           PNG                     "res\\ResNormal.png"
+IDR_ResHot              PNG                     "res\\ResHot.png"
+IDR_ResPress            PNG                     "res\\ResPress.png"
+IDR_ClosePress          PNG                     "res\\ClosePress.png"
+IDR_CloseHot            PNG                     "res\\CloseHot.png"
+IDR_CloseNormal         PNG                     "res\\CloseNormal.png"
+IDR_MinHot              PNG                     "res\\MinHot.png"
+IDR_PlusPress           PNG                     "res\\PlusPress.png"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\AutoDetector.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"     // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
